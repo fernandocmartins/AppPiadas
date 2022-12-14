@@ -1,5 +1,6 @@
 package br.com.fernando.apppiadas
 
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -25,6 +26,12 @@ class MainActivity : AppCompatActivity() {
         val numberJoker = Random().nextInt(jokers.size)
         val joker = jokers[numberJoker]
         binding.tvJoker.text = joker
+        playSong()
+    }
+
+    private fun playSong() {
+        val mediaPlayer = MediaPlayer.create(this, R.raw.badumtss)
+        mediaPlayer.start()
     }
 
 
